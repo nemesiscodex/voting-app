@@ -1,1 +1,4 @@
+if [ -z "$IP" ]; then
+    IP=localhost
+fi
 mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"
