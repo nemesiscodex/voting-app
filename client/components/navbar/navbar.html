@@ -1,4 +1,4 @@
-<div class="ui menu nav"  ng-controller="NavbarCtrl">
+<div class="ui inverted menu nav"  ng-controller="NavbarCtrl">
   <a class='item' href="/">Workspace</a>
   <a class="item" ng-repeat="item in menu" ng-href="{{item.link}}" ng-class="{active: isActive(item.link)}">{{item.title}}</a>
   <div class="right menu">

@@ -1,12 +1,12 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="ui container grid">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="sixteen wide column">
       <h1>Sign up</h1>
     </div>
-    <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="register(form)" novalidate>
+    <div class="sixteen wide column">
+      <form class="ui form" name="form" ng-submit="register(form)" novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
@@ -53,20 +53,20 @@
             {{ errors.password }}
           </p>
         </div>
-
-        <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+        <br>
+        <div class="row">
+          <button class="ui green button btn-login" type="submit">
             Sign up
           </button>
-          <a class="btn btn-default btn-lg btn-register" href="/login">
+          <a class="ui blue button btn-register" href="/login">
             Login
           </a>
         </div>
 
         <hr>
         <div>
-          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
-            <i class="fa fa-twitter"></i> Connect with Twitter
+          <a class="ui twitter button" href="" ng-click="loginOauth('twitter')">
+            <i class="twitter icon"></i> Connect with Twitter
           </a>
         </div>
       </form>

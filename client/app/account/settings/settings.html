@@ -1,12 +1,12 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="ui container grid">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>Change Password</h1>
+    <div class="sixteen wide column">
+      <h1 class='ui header'>Change Password</h1>
     </div>
-    <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
+    <div class="sixteen wide column">
+      <form class="ui form" name="form" ng-submit="changePassword(form)" novalidate>
 
         <div class="form-group">
           <label>Current Password</label>
@@ -32,7 +32,7 @@
 
         <p class="help-block"> {{ message }} </p>
 
-        <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+        <button class="ui blue button" type="submit">Save changes</button>
       </form>
     </div>
   </div>

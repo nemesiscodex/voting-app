@@ -1,4 +1,9 @@
-
+.hero-unit{
+    color: #F5F5F5;
+    background: #4393B9;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
 .nav.ui.menu{
-    margin-bottom: 20px;
+    border-radius: 0;
+    margin-bottom: 4px;
 }

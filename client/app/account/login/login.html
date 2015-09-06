@@ -1,14 +1,14 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="ui container grid">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="sixteen wide column">
       <h1>Login</h1>
-      <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
+      <pre>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></pre>
       <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
     </div>
-    <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="login(form)" novalidate>
+    <div class="sixteen wide column">
+      <form class="ui form" name="form" ng-submit="login(form)" novalidate>
 
         <div class="form-group">
           <label>Email</label>
@@ -32,20 +32,20 @@
 
           <p class="help-block">{{ errors.other }}</p>
         </div>
-
+        <br>
         <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+          <button class="ui blue button btn-login" type="submit">
             Login
           </button>
-          <a class="btn btn-default btn-lg btn-register" href="/signup">
+          <a class="ui green button btn-register" href="/signup">
             Register
           </a>
         </div>
 
         <hr>
         <div>
-          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
-            <i class="fa fa-twitter"></i> Connect with Twitter
+          <a class="ui twitter button" href="" ng-click="loginOauth('twitter')">
+            <i class="twitter icon"></i> Connect with Twitter
           </a>
         </div>
       </form>
