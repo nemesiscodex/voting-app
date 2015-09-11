@@ -1,0 +1,23 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<br>
+<div class="ui container">
+	<div class="ui link centered cards">
+		<a class="ui card" ng-repeat="poll in polls"href="/polls/{{poll._id}}">
+			<div class="content">
+				<div class="header">{{poll.name}}</div>
+				<div class="meta">Created at {{poll.creationDate | date}}</div>
+			</div>
+			<div class="ui content clearing segments">
+				<div class="ui segment" ng-repeat="item in poll.items|limitTo:2">{{item.name}}
+					<div class="ui right floated"><i class="thumbs up icon"></i> {{item.votes}}</div>
+				</div>
+			</div>
+			<div class="extra poll content">
+				<div class="ui center aligned meta" ng-show="poll.items.length - 2 > 0">
+					And {{poll.items.length - 2}} others
+				</div>
+				<span ng-if="poll.items.length - 2 == 0 ">&nbsp</span>
+			</div>
+		</a>
+	</div>
+</div>
