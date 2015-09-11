@@ -30,6 +30,8 @@ angular.module('workspaceApp', [
       // Intercept 401s and redirect you to login
       responseError: function(response) {
         if(response.status === 401) {
+          if(!window.next)
+            window.next = $location.$$path;
           $location.path('/login');
           // remove any stale tokens
           $cookieStore.remove('token');

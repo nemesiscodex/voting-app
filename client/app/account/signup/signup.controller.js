@@ -16,7 +16,12 @@ angular.module('workspaceApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+
+          if(window.next) {
+            var next = window.next;
+            window.next = undefined;
+            $location.path(next);
+          }else $location.path('/');
         })
         .catch( function(err) {
           err = err.data;
