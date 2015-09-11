@@ -2,13 +2,14 @@
 <br>
 <div class="ui container">
 	<div class="ui link centered cards">
-		<a class="ui card" ng-repeat="poll in polls"href="/polls/{{poll._id}}">
+		<a class="ui card" ng-repeat="poll in polls" href="/polls/{{poll._id}}">
 			<div class="content">
+				<div class="right floated ui circular icon button"><i class="icon">{{poll.voters.length}}</i></div>
 				<div class="header">{{poll.name}}</div>
-				<div class="meta">Created at {{poll.creationDate | date}}</div>
+				<div class="meta">Created at {{poll.creationDate | date}} by <strong>{{poll.creator.name}}</strong></div>
 			</div>
 			<div class="ui content clearing segments">
-				<div class="ui segment" ng-repeat="item in poll.items|limitTo:2">{{item.name}}
+				<div class="ui meta segment" ng-repeat="item in poll.items|limitTo:2">{{item.name}}
 					<div class="ui right floated"><i class="thumbs up icon"></i> {{item.votes}}</div>
 				</div>
 			</div>

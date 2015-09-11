@@ -1,6 +1,9 @@
 .ui.content.segments{
     padding: 0 !important;
 }
-.extra.poll.content{
+.extra.poll.content, .ui.basic.menu.content{
     padding: 0;
+}
+.chart.content{
+    height: 75vh;
 }

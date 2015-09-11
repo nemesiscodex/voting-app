@@ -3,8 +3,16 @@
 angular.module('workspaceApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
+      'title': '<i class="line chart icon"></i> Trending',
+      'link': '/polls'
+    },{
+      'needAuth': true,
+      'title': '<i class="pie chart icon"></i> My Polls',
+      'link': '/polls/mine'
+    },{
+      'needAuth': true,
+      'title': '<i class="plus icon"></i> New Poll',
+      'link': '/polls/new'
     }];
 
     $scope.isCollapsed = true;

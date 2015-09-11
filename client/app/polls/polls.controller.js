@@ -97,7 +97,7 @@ angular.module('workspaceApp')
 		if ($location.$$path === '/polls/mine')
 			$http.get('/api/polls/mine').then(function (response) {
 				$scope.polls = response.data.map(function(poll){
-					poll.totalVoters = poll.items.reduce(function(sum, item){ return sum + item.votes}, 0)
+					poll.totalVoters = poll.items.reduce(function(sum, item){ return sum + item.votes; }, 0);
 					return poll;
 				}).sort(function(pollA, pollB){
 					return pollB.totalVoters - pollA.totalVoters;
@@ -106,8 +106,9 @@ angular.module('workspaceApp')
 		else if(id == undefined){
 			$scope.editable = true;
 			$http.get('/api/polls').then(function (response) {
+				console.log(response);
 				$scope.polls = response.data.map(function(poll){
-					poll.totalVoters = poll.items.reduce(function(sum, item){ return sum + item.votes}, 0)
+					poll.totalVoters = poll.items.reduce(function(sum, item){ return sum + item.votes; }, 0);
 					return poll;
 				}).sort(function(pollA, pollB){
 					return pollB.totalVoters - pollA.totalVoters;
@@ -144,6 +145,7 @@ angular.module('workspaceApp')
 				$http.post('/api/polls/' + id + '/vote', {itemId: itemId})
 					.then(function (response) {
 						$scope.poll = response.data;
+						console.log(response.data);
 						$scope.alreadyVoted.set(true);
 						$timeout(function(){
 							$scope.$apply();
@@ -155,7 +157,7 @@ angular.module('workspaceApp')
 			$scope.delete = function(){
 				if(confirm("Are you sure you want to delete '"+ $scope.poll.name +"'?\nThis operation cannot be undone."))
 					$http.delete('/api/polls/' + id)
-						.then(function (response) {
+						.then(function () {
 							$location.path('/polls/mine');
 						});
 			};

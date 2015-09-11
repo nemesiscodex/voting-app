@@ -1,0 +1,17 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<br>
+<div class="ui centered two stackable cards">
+    <div class="ui large card">
+        <div class="content">
+            <button ng-click="delete()" ng-if="isLoggedIn() && currentUser._id == poll.creator._id" class="ui light delete button right floated"><i class="remove circle icon"></i> Delete</button>
+            <div class="header">{{poll.name}}</div>
+            <div class="meta">Created at {{poll.creationDate|date}} by {{poll.creator.name}}</div>
+        </div>
+        <div ng-show="alreadyVoted.val || showResults" class="chart content">
+
+        </div>
+        <div class="ui fluid vertical basic menu content" ng-hide="alreadyVoted.val || showResults">
+            <a class="item" ng-click="vote(item._id)" ng-repeat="item in poll.items">{{item.name}} <i class="thumbs up icon"></i></a>
+        </div>
+    </div>
+</div>

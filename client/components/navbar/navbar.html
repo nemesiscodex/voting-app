@@ -1,11 +1,11 @@
-<div class="ui inverted menu nav"  ng-controller="NavbarCtrl">
-  <a class='item' href="/">Workspace</a>
-  <a class="item" ng-repeat="item in menu" ng-href="{{item.link}}" ng-class="{active: isActive(item.link)}">{{item.title}}</a>
+<div class="ui inverted huge menu nav"  ng-controller="NavbarCtrl">
+  <a class='item' href="javascript:void(0)">PollVot</a>
+  <a class="item" ng-show="isLoggedIn() || !item.needAuth" ng-repeat="item in menu" ng-href="{{item.link}}" ng-class="{active: isActive(item.link)}" ng-bind-html="item.title"></a>
   <div class="right menu">
     <a class='item' ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" href="/signup">Sign up</a>
-    <a class='item' ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" href="/login">Login</a>
+    <a class='item' ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" href="/login"><i class="sign in icon"></i> Login</a>
     <a class='item' ng-show="isLoggedIn()" >Hello {{ getCurrentUser().name }}</a>
-    <a class='item' ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}" href="/settings">Settings</a>
-    <a class='item' ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" href="/logout" ng-click="logout()">Logout</a>
+    <a class='item' ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}" href="/settings"><i class="configure icon"></i></a>
+    <a class='item' ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" href="/logout" ng-click="logout()"><i class="sign out icon"></i> Logout</a>
   </div>
 </div>
