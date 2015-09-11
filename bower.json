@@ -11,7 +11,8 @@
     "angular-route": ">=1.2.*",
     "font-awesome": ">=4.1.0",
     "lodash": "~2.4.1",
-    "semantic-ui": "~2.1.3"
+    "semantic-ui": "~2.1.3",
+    "echarts": "ecomfe/echarts#~2.2.7"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
@@ -19,7 +20,16 @@
   },
   "overrides": {
     "semantic-ui": {
-      "main": ["dist/semantic.css", "dist/semantic.js"]
+      "main": [
+        "dist/semantic.css",
+        "dist/semantic.js"
+      ]
+    },
+    "echarts": {
+      "main": [
+        "build/dist/echarts.js",
+        "build/dist/chart/pie.js"
+      ]
     }
   }
 }
