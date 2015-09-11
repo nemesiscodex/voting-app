@@ -1,40 +1,53 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div class="ui container grid">
-	<div class="row">
-    <div class="sixteen wide column">
-      <h1 class='ui header'>New Poll</h1>
-      {{poll}}
-    </div>
-    <div class="sixteen wide column">
-      <form class="ui form" name="form" ng-submit="addPoll(form)" novalidate>
+<br>
+<div class="ui two centered cards">
+	<div class="ui card">
+		<div class="ui container grid content">
+			<div class="row">
+				<div class="sixteen wide column">
+					<h1 class='ui header'>New Poll</h1>
+				</div>
+				<div class="sixteen wide column">
+					<form class="ui form" name="form" ng-submit="addPoll(form)" novalidate>
 
-        <div class="form-group">
-          <label>Title</label>
+						<div class="form-group">
+							<label>Question</label>
 
-          <input type="text" name="title" class="form-control" ng-model="poll.name"
-                 mongoose-error/>
-          <p class="help-block" ng-show="form.name.$error.mongoose">
-              {{ errors.other }}
-          </p>
-        </div>
+							<input type="text" name="name" class="form-control" ng-model="poll.name"
+							       mongoose-error ng-minlength="3" required />
 
-        <div class="form-group" ng-repeat='item in poll.items'>
-          <label>Question {{ $index + 1 }}</label>
+							<p class="ui red message" ng-show="(form.name.$error.required || form.name.$error.minlength) &&  submitted">
+								<span ng-if="form.name.$error.mongoose">
+									{{ message }}
+								</span>
+								<span ng-if="form.name.$error.required">Your poll need to have a title/question.</span>
+								<span ng-if="form.name.$error.minlength">The question must be at least 3 characters long.</span>
+							</p>
+						</div>
 
-          <input type="text" name="item{{$index}}" class="form-control" ng-model="item.name"
-                 ng-minlength="3"
-                 required/>
-          <p class="help-block"
-             ng-show="(form['item'+$index].$error.required) && (form['item'+$index].$dirty || submitted)">
-            Password must be at least 3 characters.
-          </p>
-        </div>
+						<div class="form-group" ng-repeat='item in poll.items'>
+							<label>Option {{ $index + 1 }}</label>
 
-        <p class="help-block"> {{ message }} </p>
+							<input type="text" name="item{{$index}}" class="form-control" ng-model="item.name"
+							       ng-minlength="2"
+							       required/>
 
-        <button class="ui blue button" type="submit">Save changes</button>
-        <button class="ui green button" ng-click='addQuestion()' type="button">Add question</button>
-      </form>
-    </div>
-  </div>
+							<p class="ui red message"
+							   ng-show="(form['item'+$index].$error.required || form['item'+$index].$error.minlength) && (form['item'+$index].$dirty || submitted)">
+								<span ng-if="form['item'+$index].$error.required">This option is required.</span>
+								<span ng-if="form['item'+$index].$error.minlength">The option must be at least 3 characters long.</span>
+							</p>
+						</div>
+
+						<p class="help-block"> {{ message }} </p>
+
+						<button class="ui action button" type="submit">Save changes</button>
+						<button class="ui add button" ng-click='addQuestion()' type="button">Add question</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
 </div>

@@ -34,6 +34,8 @@ angular.module('workspaceApp')
 
 		function drawChart() {
 			vm.chart = echarts.init(angular.element('.chart.content')[0], {color: [
+				'#616382', '#ADAEBD', '#82839B', '#47496C', '#2D2F51',
+				'#333676', '#7F81B1', '#545894', '#191C59', '#080B3B',
 				'#1790cf','#1bb2d8','#99d2dd','#88b0bb',
 				'#1c7099','#038cc4','#75abd0','#afd6dd'
 			]});

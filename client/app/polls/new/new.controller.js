@@ -23,10 +23,9 @@ angular.module('workspaceApp')
         .then( function(response) {
           var newPoll = response.data;
           $location.path('/polls/'+ newPoll._id)
-        })
-        .catch( function() {
-          form.password.$setValidity('mongoose', false);
-          $scope.message = 'Cannot create new Poll.';
+        }, function() {
+            form.name.$setValidity('mongoose', false);
+            $scope.message = 'Cannot create new Poll.';
         });
       }
 		};

@@ -6,4 +6,38 @@
 .nav.ui.menu{
     border-radius: 0;
     margin-bottom: 4px;
+    background-color: #505278;
+}
+body{
+    background-color: #E1E1E4;
+}
+.ui.delete.button{
+    background-color: #CA6775;
+    color: white;
+}
+.ui.delete.button:hover{
+    background-color: #AA5460;
+}
+.ui.add.button{
+    color: white;
+    background-color: #6AA775;
+}
+.ui.add.button:hover{
+    background-color: #4C8E57;
+}
+.ui.action.button{
+    color: white;
+    background-color: #6367B1;
+}
+.ui.action.button:hover{
+    background-color: #4D519D;
+}
+.ui.alt.twitter.button{
+    background-color: #6AA1AE;
+}
+.ui.alt.twitter.button:hover{
+    background-color: #448290;
+}
+.ui.message{
+    padding: 10px;
 }

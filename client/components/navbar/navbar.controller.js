@@ -3,6 +3,9 @@
 angular.module('workspaceApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
+      'title': 'PollVot',
+      'link': '/'
+    },{
       'title': '<i class="line chart icon"></i> Trending',
       'link': '/polls'
     },{

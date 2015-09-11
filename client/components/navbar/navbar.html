@@ -1,5 +1,4 @@
-<div class="ui inverted huge menu nav"  ng-controller="NavbarCtrl">
-  <a class='item' href="javascript:void(0)">PollVot</a>
+<div class="ui inverted basic huge menu nav"  ng-controller="NavbarCtrl">
   <a class="item" ng-show="isLoggedIn() || !item.needAuth" ng-repeat="item in menu" ng-href="{{item.link}}" ng-class="{active: isActive(item.link)}" ng-bind-html="item.title"></a>
   <div class="right menu">
     <a class='item' ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" href="/signup">Sign up</a>

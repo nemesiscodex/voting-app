@@ -1,10 +1,10 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <br>
 <div class="ui container">
-	<div class="ui link centered cards">
+	<div class="ui link centered poll cards">
 		<a class="ui card" ng-repeat="poll in polls" href="/polls/{{poll._id}}">
 			<div class="content">
-				<div class="right floated ui circular icon button"><i class="icon">{{poll.voters.length}}</i></div>
+				<div class="right floated ui icon button"><i class="voters icon">{{poll.voters.length}}</i></div>
 				<div class="header">{{poll.name}}</div>
 				<div class="meta">Created at {{poll.creationDate | date}} by <strong>{{poll.creator.name}}</strong></div>
 			</div>
@@ -17,7 +17,7 @@
 				<div class="ui center aligned meta" ng-show="poll.items.length - 2 > 0">
 					And {{poll.items.length - 2}} others
 				</div>
-				<span ng-if="poll.items.length - 2 == 0 ">&nbsp</span>
+				<div class="center aligned" ng-if="poll.items.length - 2 == 0 ">-</div>
 			</div>
 		</a>
 	</div>
