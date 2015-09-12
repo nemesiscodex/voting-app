@@ -41,3 +41,48 @@ body{
 .ui.message{
     padding: 10px;
 }
+.home.container{
+    width: 100%;
+    background-color: #505278;
+}
+.home.container h1.ui.header{
+    padding-top: 15vh;
+    color: white;
+}
+.home.container h2.ui.header{
+    padding-bottom: 20vh;
+    color:white;
+}
+.center.aligned.icon.content .icon{
+    font-size: 10em;
+    padding-top: 60px;
+
+}
+.home.ui.container{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.center.aligned.icon.content .lightning.icon{
+    color: #F6FC98;
+}
+.center.aligned.icon.content .world.icon{
+    color: #7A86BB;
+}
+.center.aligned.icon.content .money.icon{
+    color: #8FDA83;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .hide-mobile{
+        display: none !important;
+    }
+    .nav .icon{
+        margin-right: 0 !important;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .show-mobile-only{
+        display: none !important;
+    }
+}

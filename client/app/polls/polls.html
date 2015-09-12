@@ -1,7 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <br>
 <div class="ui container">
-	<div class="ui link centered poll cards">
+	<div class="ui stackable link centered poll cards">
 		<a class="ui card" ng-repeat="poll in polls" href="/polls/{{poll._id}}">
 			<div class="content">
 				<div class="right floated ui icon button"><i class="voters icon">{{poll.voters.length}}</i></div>

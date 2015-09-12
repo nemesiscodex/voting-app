@@ -3,18 +3,18 @@
 angular.module('workspaceApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'PollVot',
+      'title': '<i class="home icon show-mobile-only"></i><span class="hide-mobile">PollVot</span>',
       'link': '/'
     },{
-      'title': '<i class="line chart icon"></i> Trending',
+      'title': '<i class="line chart icon"></i> <span class="hide-mobile">Trending</span>',
       'link': '/polls'
     },{
       'needAuth': true,
-      'title': '<i class="pie chart icon"></i> My Polls',
+      'title': '<i class="pie chart icon"></i> <span class="hide-mobile">My Polls</span>',
       'link': '/polls/mine'
     },{
       'needAuth': true,
-      'title': '<i class="plus icon"></i> New Poll',
+      'title': '<i class="plus icon"></i> <span class="hide-mobile">New Poll</span>',
       'link': '/polls/new'
     }];
 
