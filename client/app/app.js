@@ -26,8 +26,16 @@ angular.module('workspaceApp', [
         'LOGIN': 'Login'
       },
       'LOGOUT': 'Logout',
+      'TWITTER': {
+        'CONNECT': 'Connect with Twitter'
+      },
       'SIGNUP': {
-        'SIGNUP': 'Signup'
+        'SIGNUP': 'Signup',
+        'NAME': 'Name',
+        'NAME_REQUIRED': 'A name is required.',
+        'EMAIL': 'Email',
+        'EMAIL_INVALID': 'Doesn\'t look like a valid email.',
+        'EMAIL_REQUIRED': 'What\'s your email address?',
       },
       'REGISTER': 'Register',
       'TRENDING': 'Trending',
@@ -56,8 +64,16 @@ angular.module('workspaceApp', [
         'LOGIN': 'Iniciar Sesión'
       },
       'LOGOUT': 'Cerrar Sesión',
+      'TWITTER': {
+        'CONNECT': 'Conectate con Twitter'
+      },
       'SIGNUP': {
-        'SIGNUP': 'Registrarse'
+        'SIGNUP': 'Registrarse',
+        'NAME': 'Nombre',
+        'NAME_REQUIRED': 'Un nombre es requerido.',
+        'EMAIL': 'Correo electrónico',
+        'EMAIL_INVALID': 'No se ve como una dirección válida.',
+        'EMAIL_REQUIRED': 'Cual es tu dirección de correo?',
       },
       'REGISTER': 'Registrarse',
       'TRENDING': 'Tendencias',
