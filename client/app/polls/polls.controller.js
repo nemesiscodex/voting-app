@@ -118,7 +118,8 @@ angular.module('workspaceApp')
 			});
 		}
 		else{
-			$scope.showResults = false;
+			$scope.showResults = !$scope.isLoggedIn();
+
 			$scope.alreadyVoted = {};
 			if (storageAvailable('localStorage')) {
 				$scope.alreadyVoted.get = function () {
@@ -144,16 +145,17 @@ angular.module('workspaceApp')
 			$scope.alreadyVoted.get();
 
 			$scope.vote = function(itemId){
-				$http.post('/api/polls/' + id + '/vote', {itemId: itemId})
-					.then(function (response) {
-						$scope.poll = response.data;
-						console.log(response.data);
-						$scope.alreadyVoted.set(true);
-						$timeout(function(){
-							$scope.$apply();
-							drawChart();
+				if($scope.isLoggedIn())
+					$http.post('/api/polls/' + id + '/vote', {itemId: itemId})
+						.then(function (response) {
+							$scope.poll = response.data;
+							console.log(response.data);
+							$scope.alreadyVoted.set(true);
+							$timeout(function(){
+								$scope.$apply();
+								drawChart();
+							});
 						});
-					});
 			};
 
 			$scope.delete = function(){

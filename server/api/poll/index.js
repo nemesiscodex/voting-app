@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.get('/', controller.index);
 router.get('/mine', auth.isAuthenticated(), controller.indexMine);
-router.get('/:id', auth.isAuthenticated(), controller.show);
+router.get('/:id', controller.show);
 router.post('/', auth.isAuthenticated(), controller.create);
 router.post('/:id/vote', auth.isAuthenticated(), controller.vote);
 router.put('/:id', auth.isAuthenticated(), controller.update);

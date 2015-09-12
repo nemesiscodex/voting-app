@@ -3,6 +3,8 @@
 <div class="ui centered two stackable cards">
     <div class="ui large card">
         <div class="content">
+
+            <div ng-if="!isLoggedIn()" class="ui info message right floated"><i class="info circle icon"></i> Please login to vote.</div>
             <button ng-click="delete()" ng-if="isLoggedIn() && currentUser._id == poll.creator._id" class="ui light delete button right floated"><i class="remove circle icon"></i> Delete</button>
             <div class="header">{{poll.name}}</div>
             <div class="meta">Created at {{poll.creationDate|date}} by {{poll.creator.name}}</div>
