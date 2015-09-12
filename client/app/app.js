@@ -44,7 +44,10 @@ angular.module('workspaceApp', [
       'POLL': 'Poll',
       'POLL_NEW': 'New Poll',
       'POLL_MY': 'My Poll',
-      'POLLS': 'Polls',
+      'POLLS': {
+        'CREATION': 'Created at {{ creationDate | date }} by',
+        'EXTRA': 'And {{items.length - 2}} others...'
+      },
       'QUESTION': 'Question',
       'MAIN': {
         'ASK_SHARE': 'Ask questions, share results.',
@@ -85,7 +88,10 @@ angular.module('workspaceApp', [
       'POLL': 'Encuesta',
       'POLL_NEW': 'Nueva encuesta',
       'POLL_MY': 'Mis encuestras',
-      'POLLS': 'Encuestas',
+      'POLLS': {
+        'CREATION': 'Creado {{ creationDate | date:"yyyy-MM-dd" }} por',
+        'EXTRA': 'Y otras {{items.length - 2}} opciones...'
+      },
       'QUESTION': 'Pregunta',
       'OPTION': 'Opción',
       'MAIN': {
