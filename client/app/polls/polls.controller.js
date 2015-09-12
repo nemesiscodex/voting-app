@@ -67,6 +67,7 @@ angular.module('workspaceApp')
 						itemStyle : {
 							normal: {
 								label: {
+									formatter: function(obj){return obj.data.name.split(' ').join('\n')},
 									show: true,
 									textStyle: {
 										fontSize: '24',
@@ -75,7 +76,7 @@ angular.module('workspaceApp')
 								}
 							}
 						},
-						radius: '65%',
+						radius: '55%',
 						center: ['50%', '50%'],
 						data: []
 					}

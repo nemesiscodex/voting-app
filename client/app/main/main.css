@@ -50,8 +50,14 @@ body{
     color: white;
 }
 .home.container h2.ui.header{
-    padding-bottom: 20vh;
     color:white;
+}
+.home.container .signup-login{
+    padding-bottom: 20vh;
+}
+.signup-login .ui.buttons .or:before{
+    color: white;
+    background-color: #505278;
 }
 .center.aligned.icon.content .icon{
     font-size: 10em;
