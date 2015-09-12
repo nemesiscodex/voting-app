@@ -1,15 +1,21 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-
+<style id="main-style"></style>
 <div class="ui fluid home container">
+
 	<h1 class="ui center aligned header">
 		PollVot
 	</h1>
-	<h2 class="ui center aligned header">Ask questions, share results.</h2>
+
+
+	<h2 class="ui center aligned header">{{'MAIN.ASK_SHARE' | translate }}</h2>
 	<div class="ui center aligned header signup-login">
 		<div class="ui buttons">
-			<a class="ui add button" href="/signup">Signup</a>
+			<a class="ui add button" href="/signup">{{'SIGNUP.SIGNUP' | translate}}</a>
 			<div class="or"></div>
-			<a class="ui action button" href="/login">Login</a>
+			<a class="ui action button" href="/login">{{'LOGIN.LOGIN' | translate}}</a>
+		</div>
+		<div class="ui header center aligned">
+			<iframe class="ui center aligned header" src="https://ghbtns.com/github-btn.html?user=nemesiscodex&repo=voting-app&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 		</div>
 	</div>
 </div>
@@ -20,7 +26,7 @@
 			<i class="lightning icon"></i>
 		</div>
 		<div class="center aligned content meta">
-			Instant results!
+			{{ 'MAIN.INSTANT' | translate}}
 		</div>
 	</div>
 	<div class="ui card">
@@ -28,7 +34,7 @@
 			<i class="world icon"></i>
 		</div>
 		<div class="center aligned content meta">
-			Available for everyone!
+			{{ 'MAIN.EVERYONE' | translate}}
 		</div>
 	</div>
 	<div class="ui card">
@@ -36,7 +42,7 @@
 			<i class="money icon"></i>
 		</div>
 		<div class="center aligned content meta">
-			Free forever!
+			{{ 'MAIN.FREE' | translate}}
 		</div>
 	</div>
 </div>

@@ -4,7 +4,9 @@ angular.module('workspaceApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ng',
+  'pascalprecht.translate'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -15,6 +17,69 @@ angular.module('workspaceApp', [
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
   })
+
+  .config(['$translateProvider', function ($translateProvider) {
+
+    // Simply register translation table as object hash
+    $translateProvider.translations('en', {
+      'LOGIN': {
+        'LOGIN': 'Login'
+      },
+      'LOGOUT': 'Logout',
+      'SIGNUP': {
+        'SIGNUP': 'Signup'
+      },
+      'REGISTER': 'Register',
+      'TRENDING': 'Trending',
+      'POLL': 'Poll',
+      'POLL_NEW': 'New Poll',
+      'POLL_MY': 'My Poll',
+      'POLLS': 'Polls',
+      'QUESTION': 'Question',
+      'MAIN': {
+        'ASK_SHARE': 'Ask questions, share results.',
+        'OR': 'or',
+        'INSTANT': 'Instant results!',
+        'EVERYONE': 'Available for everyone!',
+        'FREE': 'Free forever!'
+      }
+    });
+    $translateProvider.translations('es', {
+      'LOGIN': {
+        'LOGIN': 'Iniciar Sesión'
+      },
+      'LOGOUT': 'Cerrar Sesión',
+      'SIGNUP': {
+        'SIGNUP': 'Registrarse'
+      },
+      'REGISTER': 'Registrarse',
+      'TRENDING': 'Tendencias',
+      'POLL': 'Encuesta',
+      'POLL_NEW': 'Nueva encuesta',
+      'POLL_MY': 'Mis encuestras',
+      'POLLS': 'Encuestas',
+      'QUESTION': 'Pregunta',
+      'OPTION': 'Opción',
+      'MAIN': {
+        'ASK_SHARE': 'Haz preguntas, comparte resultados.',
+        'OR': 'o',
+        'INSTANT': 'Resultados instantaneos!',
+        'EVERYONE': 'Disponible para todos!',
+        'FREE': 'Gratis para siempre!'
+      }
+    }).registerAvailableLanguageKeys(['en', 'es'], {
+      'en_US': 'en',
+      'en_UK': 'en',
+      'es_ES': 'es',
+      'es_PY': 'es',
+      'es_MX': 'es',
+      'es_AR': 'es'
+    });
+
+
+    $translateProvider
+      .determinePreferredLanguage();
+  }])
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
