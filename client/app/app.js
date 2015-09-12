@@ -42,6 +42,13 @@ angular.module('workspaceApp', [
         'INSTANT': 'Instant results!',
         'EVERYONE': 'Available for everyone!',
         'FREE': 'Free forever!'
+      },
+      'SAVE_CHANGES': 'Save changes',
+      'SETTINGS': {
+        'PASSWORD_CHANGE': 'Change password',
+        'PASSWORD_CURRENT': 'Current password',
+        'PASSWORD_NEW': 'New Password',
+        'PASSWORD_MINLENGTH': 'Password must be at least 3 characters.',
       }
     });
     $translateProvider.translations('es', {
@@ -66,6 +73,13 @@ angular.module('workspaceApp', [
         'INSTANT': 'Resultados instantaneos!',
         'EVERYONE': 'Disponible para todos!',
         'FREE': 'Gratis para siempre!'
+      },
+      'SAVE_CHANGES': 'Guardar cambios',
+      'SETTINGS': {
+        'PASSWORD_CHANGE': 'Cambiar contraseña',
+        'PASSWORD_CURRENT': 'Contraseña actual',
+        'PASSWORD_NEW': 'Contraseña nueva',
+        'PASSWORD_MINLENGTH': 'La contraseña debe tener al menos 3 caracteres.',
       }
     }).registerAvailableLanguageKeys(['en', 'es'], {
       'en_US': 'en',
@@ -74,7 +88,8 @@ angular.module('workspaceApp', [
       'es_PY': 'es',
       'es_MX': 'es',
       'es_AR': 'es'
-    });
+    })
+      .fallbackLanguage('en');;
 
 
     $translateProvider
