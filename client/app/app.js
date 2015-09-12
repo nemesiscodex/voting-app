@@ -23,7 +23,9 @@ angular.module('workspaceApp', [
     // Simply register translation table as object hash
     $translateProvider.translations('en', {
       'LOGIN': {
-        'LOGIN': 'Login'
+        'LOGIN': 'Login',
+        'ERROR_EMAIL_PASSWORD': 'Please enter a valid email.',
+        'REGISTER': 'Register',
       },
       'LOGOUT': 'Logout',
       'TWITTER': {
@@ -53,6 +55,7 @@ angular.module('workspaceApp', [
       },
       'SAVE_CHANGES': 'Save changes',
       'SETTINGS': {
+        'PASSWORD': 'Password',
         'PASSWORD_CHANGE': 'Change password',
         'PASSWORD_CURRENT': 'Current password',
         'PASSWORD_NEW': 'New Password',
@@ -61,7 +64,9 @@ angular.module('workspaceApp', [
     });
     $translateProvider.translations('es', {
       'LOGIN': {
-        'LOGIN': 'Iniciar Sesión'
+        'LOGIN': 'Iniciar Sesión',
+        'ERROR_EMAIL_PASSWORD': 'Please enter a valid email.',
+        'REGISTER': 'Register',
       },
       'LOGOUT': 'Cerrar Sesión',
       'TWITTER': {
@@ -92,6 +97,7 @@ angular.module('workspaceApp', [
       },
       'SAVE_CHANGES': 'Guardar cambios',
       'SETTINGS': {
+        'PASSWORD': 'Contraseña',
         'PASSWORD_CHANGE': 'Cambiar contraseña',
         'PASSWORD_CURRENT': 'Contraseña actual',
         'PASSWORD_NEW': 'Contraseña nueva',
