@@ -360,7 +360,12 @@ module.exports = function (grunt) {
             'package.json',
             'server/**/*'
           ]
-        }]
+        },{
+	  expand: true,
+	  cwd: '<%= yeoman.client %>/bower_components/semantic-ui/dist/',
+	  dest: '<%= yeoman.dist %>/public/app/',
+	  src: ['themes/**/assets/**/*']
+	}]
       },
       styles: {
         expand: true,
