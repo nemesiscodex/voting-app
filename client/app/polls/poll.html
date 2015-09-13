@@ -6,6 +6,7 @@
 
             <div ng-if="!isLoggedIn()" class="ui info message right floated"><i class="info circle icon"></i> {{ 'SIGNUP.PLEASE_VOTE' | translate }}</div>
             <button ng-click="delete()" ng-if="isLoggedIn() && currentUser._id == poll.creator._id" class="ui light delete button right floated"><i class="remove circle icon"></i> {{ 'DELETE' | translate}}</button>
+            <div ng-if="alreadyVoted.val && isLoggedIn()" class="ui info message right floated"><i class="info circle icon"></i> {{ 'POLLS.ALREADY_VOTED' | translate}}</div>
             <div class="header">{{poll.name}}</div>
             <div class="meta"><span translate="POLLS.CREATION" translate-values="{{ poll }}"></span><strong>{{poll.creator.name}}</strong></div>
         </div>

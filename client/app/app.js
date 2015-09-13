@@ -47,6 +47,7 @@ angular.module('workspaceApp', [
       'POLL_NEW': 'New Poll',
       'POLL_MY': 'My Poll',
       'POLLS': {
+        'ALREADY_VOTED': 'You voted on this already.',
         'CREATION': 'Created at {{ creationDate | date }} by',
         'EXTRA': 'And {{items.length - 2}} others...'
       },
@@ -99,6 +100,7 @@ angular.module('workspaceApp', [
       'POLL_NEW': 'Nueva encuesta',
       'POLL_MY': 'Mis encuestras',
       'POLLS': {
+        'ALREADY_VOTED': 'Ya has votado.',
         'CREATION': 'Creado {{ creationDate | date:"yyyy-MM-dd" }} por',
         'EXTRA': 'Y otras {{items.length - 2}} opciones...'
       },
