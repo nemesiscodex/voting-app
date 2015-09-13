@@ -61,6 +61,9 @@ angular.module('workspaceApp', [
       'SAVE_CHANGES': 'Save changes',
       'DELETE': 'Delete',
       'SETTINGS': {
+        'LANGUAGE_CHANGE': 'Change language',
+        'LANGUAGE_SPANISH': 'Spanish',
+        'LANGUAGE_ENGLISH': 'English',
         'PASSWORD': 'Password',
         'PASSWORD_CHANGE': 'Change password',
         'PASSWORD_CURRENT': 'Current password',
@@ -109,6 +112,9 @@ angular.module('workspaceApp', [
       },
       'SAVE_CHANGES': 'Guardar cambios',
       'SETTINGS': {
+        'LANGUAGE_CHANGE': 'Cambiar Idioma',
+        'LANGUAGE_SPANISH': 'Español',
+        'LANGUAGE_ENGLISH': 'Inglés',
         'PASSWORD': 'Contraseña',
         'PASSWORD_CHANGE': 'Cambiar contraseña',
         'PASSWORD_CURRENT': 'Contraseña actual',

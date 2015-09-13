@@ -8,6 +8,14 @@
 			<div class="ui container grid content">
 				<div class="row">
 					<div class="sixteen wide column">
+						<h1 class='ui header'>{{ 'SETTINGS.LANGUAGE_CHANGE' | translate }}</h1>
+					</div>
+					<div class="sixteen wide column">
+						<div class="ui basic button" ng-click="changeLanguage(lang.key)" ng-repeat="lang in languages"><i class="{{lang.flag}} flag"></i> {{lang.name}}</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sixteen wide column">
 						<h1 class='ui header'>{{ 'SETTINGS.PASSWORD_CHANGE' | translate }}</h1>
 					</div>
 					<div class="sixteen wide column">
