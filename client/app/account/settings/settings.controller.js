@@ -3,6 +3,7 @@
 angular.module('workspaceApp')
   .controller('SettingsCtrl', function ($scope, User, Auth, $translate, $route) {
     $scope.errors = {};
+    $scope.isLoggedIn = Auth.isLoggedIn;
     $translate(['SETTINGS.LANGUAGE_ENGLISH', 'SETTINGS.LANGUAGE_SPANISH']).then(function(translations){
       console.log(translations)
       $scope.languages = [{

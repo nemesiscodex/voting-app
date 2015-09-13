@@ -13,7 +13,6 @@ angular.module('workspaceApp')
       })
       .when('/settings', {
         templateUrl: 'app/account/settings/settings.html',
-        controller: 'SettingsCtrl',
-        authenticate: true
+        controller: 'SettingsCtrl'
       });
   });

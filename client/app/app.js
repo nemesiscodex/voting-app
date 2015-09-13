@@ -80,7 +80,7 @@ angular.module('workspaceApp', [
       },
       'LOGOUT': 'Cerrar Sesión',
       'TWITTER': {
-        'CONNECT': 'Conectate con Twitter'
+        'CONNECT': 'Inicia sesión con Twitter'
       },
       'SIGNUP': {
         'SIGNUP': 'Registrarse',

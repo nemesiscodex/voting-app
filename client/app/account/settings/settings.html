@@ -14,7 +14,7 @@
 						<div class="ui basic button" ng-click="changeLanguage(lang.key)" ng-repeat="lang in languages"><i class="{{lang.flag}} flag"></i> {{lang.name}}</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" ng-if="isLoggedIn()">
 					<div class="sixteen wide column">
 						<h1 class='ui header'>{{ 'SETTINGS.PASSWORD_CHANGE' | translate }}</h1>
 					</div>
