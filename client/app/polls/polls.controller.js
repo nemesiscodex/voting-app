@@ -15,12 +15,18 @@ function storageAvailable(type) {
 }
 
 angular.module('workspaceApp')
-	.controller('PollsCtrl', function ($scope, $http, $routeParams, $timeout, $location, Auth) {
+	.controller('PollsCtrl', function ($scope, $http, $routeParams, $timeout, $location, Auth, $translate) {
 		var id = $routeParams.id;
 
 		$scope.isLoggedIn = Auth.isLoggedIn;
 		$scope.isAdmin = Auth.isAdmin;
 		$scope.currentUser = Auth.getCurrentUser();
+
+		var saveImage = 'Save as Image';
+
+		$translate('SAVE_IMAGE').then(function(saveImageTranslated){
+			saveImage = saveImageTranslated;
+		});
 
 
 		var vm = this;
@@ -57,7 +63,7 @@ angular.module('workspaceApp')
 				toolbox: {
 					show: true,
 					feature: {
-						saveAsImage: {show: true, title: 'Save as Image'}
+						saveAsImage: {show: true, title: saveImage}
 					}
 				},
 				series: [

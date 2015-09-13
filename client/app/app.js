@@ -33,6 +33,7 @@ angular.module('workspaceApp', [
       },
       'SIGNUP': {
         'SIGNUP': 'Signup',
+        'PLEASE_VOTE': 'Please login to vote.',
         'NAME': 'Name',
         'NAME_REQUIRED': 'A name is required.',
         'EMAIL': 'Email',
@@ -42,6 +43,7 @@ angular.module('workspaceApp', [
       'REGISTER': 'Register',
       'TRENDING': 'Trending',
       'POLL': 'Poll',
+      'SAVE_IMAGE': 'Save as image',
       'POLL_NEW': 'New Poll',
       'POLL_MY': 'My Poll',
       'POLLS': {
@@ -57,6 +59,7 @@ angular.module('workspaceApp', [
         'FREE': 'Free forever!'
       },
       'SAVE_CHANGES': 'Save changes',
+      'DELETE': 'Delete',
       'SETTINGS': {
         'PASSWORD': 'Password',
         'PASSWORD_CHANGE': 'Change password',
@@ -77,6 +80,7 @@ angular.module('workspaceApp', [
       },
       'SIGNUP': {
         'SIGNUP': 'Registrarse',
+        'PLEASE_VOTE': 'Por favor inicie sesión para poder votar.',
         'NAME': 'Nombre',
         'NAME_REQUIRED': 'Un nombre es requerido.',
         'EMAIL': 'Correo electrónico',
@@ -86,6 +90,8 @@ angular.module('workspaceApp', [
       'REGISTER': 'Registrarse',
       'TRENDING': 'Tendencias',
       'POLL': 'Encuesta',
+      'SAVE_IMAGE': 'Guardar imagen',
+      'DELETE': 'Eliminar',
       'POLL_NEW': 'Nueva encuesta',
       'POLL_MY': 'Mis encuestras',
       'POLLS': {

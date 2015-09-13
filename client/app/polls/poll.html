@@ -4,10 +4,10 @@
     <div class="ui large card">
         <div class="content">
 
-            <div ng-if="!isLoggedIn()" class="ui info message right floated"><i class="info circle icon"></i> Please login to vote.</div>
-            <button ng-click="delete()" ng-if="isLoggedIn() && currentUser._id == poll.creator._id" class="ui light delete button right floated"><i class="remove circle icon"></i> Delete</button>
+            <div ng-if="!isLoggedIn()" class="ui info message right floated"><i class="info circle icon"></i> {{ 'SIGNUP.PLEASE_VOTE' | translate }}</div>
+            <button ng-click="delete()" ng-if="isLoggedIn() && currentUser._id == poll.creator._id" class="ui light delete button right floated"><i class="remove circle icon"></i> {{ 'DELETE' | translate}}</button>
             <div class="header">{{poll.name}}</div>
-            <div class="meta">Created at {{poll.creationDate|date}} by {{poll.creator.name}}</div>
+            <div class="meta"><span translate="POLLS.CREATION" translate-values="{{ poll }}"></span><strong>{{poll.creator.name}}</strong></div>
         </div>
         <div ng-show="alreadyVoted.val || showResults" class="chart content">
 
