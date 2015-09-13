@@ -18,6 +18,8 @@ angular.module('workspaceApp')
 	.controller('PollsCtrl', function ($scope, $http, $routeParams, $timeout, $location, Auth, $translate) {
 		var id = $routeParams.id;
 
+		$scope.location = $location.absUrl();
+
 		$scope.isLoggedIn = Auth.isLoggedIn;
 		$scope.isAdmin = Auth.isAdmin;
 		$scope.currentUser = Auth.getCurrentUser();
@@ -175,6 +177,9 @@ angular.module('workspaceApp')
 
 			$http.get('/api/polls/' + id).then(function (response) {
 				$scope.poll = response.data;
+				$translate('QUESTION').then(function(translate){
+					$scope.twitterText = translate + ': ' +$scope.poll.name;
+				});
 				if($scope.poll.voters.indexOf($scope.currentUser._id) !== -1)
 					$scope.alreadyVoted.set(true);
 				$timeout(drawChart);
