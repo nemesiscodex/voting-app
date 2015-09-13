@@ -149,7 +149,8 @@ angular.module('workspaceApp')
 				};
 			}
 
-
+			if(!$scope.isLoggedIn())
+				window.next = $location.$$path;
 
 			$scope.alreadyVoted.get();
 
