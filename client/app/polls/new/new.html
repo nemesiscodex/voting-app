@@ -5,13 +5,13 @@
 		<div class="ui container grid content">
 			<div class="row">
 				<div class="sixteen wide column">
-					<h1 class='ui header'>New Poll</h1>
+					<h1 class='ui header'>{{ 'POLL_NEW' | translate }}</h1>
 				</div>
 				<div class="sixteen wide column">
 					<form class="ui form" name="form" ng-submit="addPoll(form)" novalidate>
 
 						<div class="form-group">
-							<label>Question</label>
+							<label>{{ 'QUESTION' | translate }}</label>
 
 							<input type="text" name="name" class="form-control" ng-model="poll.name"
 							       mongoose-error ng-minlength="3" required />
@@ -26,7 +26,7 @@
 						</div>
 
 						<div class="form-group" ng-repeat='item in poll.items'>
-							<label>Option {{ $index + 1 }}</label>
+							<label translate="OPTION" translate-value-num="{{ $index + 1 }}"></label>
 
 							<input type="text" name="item{{$index}}" class="form-control" ng-model="item.name"
 							       ng-minlength="2"

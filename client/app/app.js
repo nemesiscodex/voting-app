@@ -51,6 +51,7 @@ angular.module('workspaceApp', [
         'EXTRA': 'And {{items.length - 2}} others...'
       },
       'QUESTION': 'Question',
+      'OPTION': 'Option {{ num }}',
       'MAIN': {
         'ASK_SHARE': 'Ask questions, share results.',
         'OR': 'or',
@@ -102,7 +103,7 @@ angular.module('workspaceApp', [
         'EXTRA': 'Y otras {{items.length - 2}} opciones...'
       },
       'QUESTION': 'Pregunta',
-      'OPTION': 'Opción',
+      'OPTION': 'Opción {{num}}',
       'MAIN': {
         'ASK_SHARE': 'Haz preguntas, comparte resultados.',
         'OR': 'o',
