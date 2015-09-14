@@ -132,10 +132,8 @@ angular.module('workspaceApp', [
       'es_MX': 'es',
       'es_AR': 'es'
     })
-      .fallbackLanguage('en');;
-
-
-    $translateProvider
+      .fallbackLanguage('en')
+      .useLocalStorage()
       .determinePreferredLanguage();
   }])
 
