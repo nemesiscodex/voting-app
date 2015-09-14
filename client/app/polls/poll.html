@@ -4,6 +4,7 @@
     <div class="ui large card">
         <div class="content">
 
+            <a target="_blank" class="ui circular icon facebook button right floated" href=https://www.facebook.com/dialog/share?app_id=682746471855920&display=popup&href={{location}}&redirect_uri={{location}}"><i class="facebook icon"></i></a>
             <a class="ui circular icon twitter button right floated" href="https://twitter.com/intent/tweet?url={{location}}&hashtags=pollvot&via=nemesiscodex&text={{ twitterText }}&short_url_length=22"><i class="twitter icon"></i></a>
             <div ng-if="!isLoggedIn()" class="ui info message right floated"><i class="info circle icon"></i> {{ 'SIGNUP.PLEASE_VOTE' | translate }}</div>
             <button ng-click="delete()" ng-if="isLoggedIn() && currentUser._id == poll.creator._id" class="ui light delete button right floated"><i class="remove circle icon"></i> {{ 'DELETE' | translate}}</button>
@@ -18,5 +19,10 @@
         <div class="ui fluid vertical basic menu content" ng-hide="alreadyVoted.val || showResults">
             <a class="item" ng-click="vote(item._id)" ng-repeat="item in poll.items">{{item.name}} <i class="thumbs up icon"></i></a>
         </div>
+        <div class="content center aligned centered">
+            <div class="fb-comments" data-href="{{location}}" data-version="v2.3"></div>
+        </div>
     </div>
 </div>
+
+<div id="fb-root"></div>
