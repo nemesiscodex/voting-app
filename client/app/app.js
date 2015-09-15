@@ -27,7 +27,11 @@ angular.module('workspaceApp', [
         'ERROR_EMAIL_PASSWORD': 'Please enter a valid email.',
         'REGISTER': 'Register',
       },
+      'SOON': 'Coming soon.',
       'LOGOUT': 'Logout',
+      'FACEBOOK':{
+        CONNECT: 'Connect with Facebook'
+      },
       'TWITTER': {
         'CONNECT': 'Connect with Twitter'
       },
@@ -79,7 +83,11 @@ angular.module('workspaceApp', [
         'ERROR_EMAIL_PASSWORD': 'Please enter a valid email.',
         'REGISTER': 'Register',
       },
+      'SOON': 'Proximamente.',
       'LOGOUT': 'Cerrar Sesión',
+      'FACEBOOK':{
+        CONNECT: 'Inicia sesión con Facebook'
+      },
       'TWITTER': {
         'CONNECT': 'Inicia sesión con Twitter'
       },
