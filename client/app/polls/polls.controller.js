@@ -47,6 +47,9 @@ angular.module('workspaceApp')
 				'#1790cf','#1bb2d8','#99d2dd','#88b0bb',
 				'#1c7099','#038cc4','#75abd0','#afd6dd'
 			]});
+
+			var radius = (window.screen.availWidth >= 640)? '55%': '25%';
+
 			var option = {
 				title: {
 					//text: $scope.poll.name,
@@ -78,13 +81,13 @@ angular.module('workspaceApp')
 									formatter: function(obj){return obj.data.name.split(' ').join('\n')},
 									show: true,
 									textStyle: {
-										fontSize: '24',
+										fontSize: '20',
 										fontWeight: 'bolder'
 									}
 								}
 							}
 						},
-						radius: '55%',
+						radius: radius,
 						center: ['50%', '50%'],
 						data: []
 					}

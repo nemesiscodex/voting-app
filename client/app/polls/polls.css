@@ -13,3 +13,6 @@
 .right.floated.message{
     margin: 0;
 }
+.fb-comments, .fb-comments iframe[style], .fb-comments span {
+    width: 100% !important;
+}

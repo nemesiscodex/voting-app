@@ -32,7 +32,7 @@ exports.indexMine = function(req, res) {
       });
       return poll;
     }).sort(function(pollA, pollB){
-      return pollB.totalVotes - pollA.totalVotes;
+      return pollB.creationDate.getTime() - pollA.creationDate.getTime();
     });
     return res.status(200).json(polls);
   });
