@@ -2,20 +2,25 @@
 <style id="main-style"></style>
 <div class="ui fluid home container">
 
-	<h1 class="ui center aligned header">
+	<div class="right floated" style="float: right; padding-top: 5vh">
+		<iframe class="ui right floated" src="https://ghbtns.com/github-btn.html?user=nemesiscodex&repo=voting-app&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+	</div>
+	<h1 class="ui center aligned header" style="margin-top: -3vh">
 		PollVot
 	</h1>
 
 
 	<h2 class="ui center aligned header">{{'MAIN.ASK_SHARE' | translate }}</h2>
 	<div class="ui center aligned header signup-login">
-		<div class="ui buttons">
+		<div class="ui buttons" ng-if="!isLoggedIn()">
 			<a class="ui add button" href="/signup">{{'SIGNUP.SIGNUP' | translate}}</a>
 			<div class="or"></div>
 			<a class="ui action button" href="/login">{{'LOGIN.LOGIN' | translate}}</a>
 		</div>
-		<div class="ui header center aligned">
-			<iframe class="ui center aligned header" src="https://ghbtns.com/github-btn.html?user=nemesiscodex&repo=voting-app&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+		<div class="ui buttons" ng-if="isLoggedIn()">
+			<a class="ui add button" href="/polls/new/">{{'POLL_CREATE_NEW' | translate}}</a>
+			<div class="or"></div>
+			<a class="ui action button" href="/polls/">{{'TRENDING_DISCOVER' | translate}}</a>
 		</div>
 	</div>
 </div>
