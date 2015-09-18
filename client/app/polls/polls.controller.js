@@ -50,6 +50,33 @@ angular.module('workspaceApp')
 
 			var radius = (window.screen.availWidth >= 640)? '55%': '25%';
 
+			var longText = function(obj, separator, maxLength){
+				var result = [];
+				var aux = '';
+				var name = '';
+				if(!maxLength)
+					maxLength = 18;
+				if(!separator)
+					separator = '\n';
+				if(typeof (obj) === 'string')
+					name = obj;
+				else name = obj.data.name;
+
+				name.split(' ').map(function(el, idx, array){
+					if(aux.length < maxLength){
+						aux += el + ' ';
+					}else{
+						result.push(aux);
+						aux = el + ' ';
+					}
+
+					if(idx === array.length - 1){
+						result.push(aux);
+					}
+				});
+				return result.join(separator)
+			};
+
 			var option = {
 				title: {
 					//text: $scope.poll.name,
@@ -58,7 +85,9 @@ angular.module('workspaceApp')
 				},
 				tooltip: {
 					trigger: 'item',
-					formatter: "{a} <br/>{b} : {c} ({d}%)"
+					formatter: function(item){
+						return  '<strong>' + longText(item[0], '<br>', 40) + '</strong> <br/> ' + longText(item[1], '<br>', 40) + ': ' + item[2] + ' (' + item[3] + '%)';
+					}
 				},
 				legend: {
 					orient: 'vertical',
@@ -78,7 +107,7 @@ angular.module('workspaceApp')
 						itemStyle : {
 							normal: {
 								label: {
-									formatter: function(obj){return obj.data.name.split(' ').join('\n')},
+									formatter: longText,
 									show: true,
 									textStyle: {
 										fontSize: '20',
@@ -96,7 +125,7 @@ angular.module('workspaceApp')
 			var item;
 			for (var i = 0; i < $scope.poll.items.length; i++) {
 				item = $scope.poll.items[i];
-				option.legend.data.push(item.name);
+				//option.legend.data.push(item.name);
 				option.series[0].data.push({value: (item.votes > 0 ? item.votes : '-'), name: item.name});
 			}
 			vm.chart.setOption(option);

@@ -8,8 +8,8 @@
 				<div class="meta"><span translate="POLLS.CREATION" translate-values="{{ poll }}"></span><strong>{{poll.creator.name}}</strong></div>
 			</div>
 			<div class="ui content clearing segments">
-				<div class="ui meta segment" ng-repeat="item in poll.items|limitTo:2">{{item.name}}
-					<div class="ui right floated"><i class="thumbs up icon"></i> {{item.votes}}</div>
+				<div class="ui meta segment" ng-repeat="item in poll.items|limitTo:2">
+					<div class="ui right floated"><i class="thumbs up icon"></i> {{item.votes}}</div>{{item.name}}
 				</div>
 			</div>
 			<div class="extra poll content">
