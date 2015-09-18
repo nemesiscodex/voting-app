@@ -23,11 +23,13 @@ exports.setup = function (User, config) {
 						console.log('profile', profile);
 						user = new User({
 							name: profile.displayName,
-							email: profile.emails[0].value,
 							role: 'user',
 							provider: 'facebook',
 							facebook: profile._json
 						});
+						if(profile.emails && profile.emails.length > 0){
+							user.email = profile.emails[0].value;
+						}
 						user.save(function(err) {
 							if (err) return done(err);
 							done(err, user);
