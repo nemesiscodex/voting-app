@@ -21,6 +21,7 @@ angular.module('workspaceApp')
 		$scope.location = $location.absUrl();
 
 		$scope.isLoggedIn = Auth.isLoggedIn;
+		$scope.isLoggedInAsync = Auth.isLoggedInAsync;
 		$scope.isAdmin = Auth.isAdmin;
 		$scope.currentUser = Auth.getCurrentUser();
 
@@ -159,10 +160,20 @@ angular.module('workspaceApp')
 			});
 		}
 		else{
-			$scope.showResults = !$scope.isLoggedIn();
+			$scope.isLoggedInAsync(function(loggedIn){
+				$scope.showResults = !loggedIn;
+			});
 
 			$scope.alreadyVoted = {};
 			if (storageAvailable('localStorage')) {
+				$scope.isLoggedInAsync(function(loggedIn){
+					if(!loggedIn){
+						window.next = $location.$$path;
+						localStorage.setItem('next', $location.$$path);
+					}else{
+						localStorage.removeItem('next');
+					}
+				});
 				$scope.alreadyVoted.get = function () {
 					$scope.alreadyVoted.val = localStorage.getItem(id) == 'true';
 					return $scope.alreadyVoted.val;
@@ -172,6 +183,13 @@ angular.module('workspaceApp')
 					localStorage.setItem(id, alreadyVoted)
 				};
 			} else { // in-memory
+				$scope.isLoggedInAsync(function(loggedIn) {
+					if (!loggedIn) {
+						window.next = $location.$$path;
+					} else {
+						window.next = undefined;
+					}
+				});
 				$scope.alreadyVoted.val = false;
 				$scope.alreadyVoted.get = function () {
 					return $scope.alreadyVoted.val;
@@ -181,8 +199,6 @@ angular.module('workspaceApp')
 				};
 			}
 
-			if(!$scope.isLoggedIn())
-				window.next = $location.$$path;
 
 			$scope.alreadyVoted.get();
 

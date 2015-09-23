@@ -13,6 +13,7 @@ angular.module('workspaceApp')
 			})
 	    .when('/polls/:id', {
 		    templateUrl: 'app/polls/poll.html',
-		    controller: 'PollsCtrl'
+		    controller: 'PollsCtrl',
+		    reloadOnSearch: false
 	    });
   });

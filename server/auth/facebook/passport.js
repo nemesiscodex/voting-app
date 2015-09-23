@@ -9,7 +9,8 @@ exports.setup = function (User, config) {
 			profileFields: [
 				'displayName',
 				'emails'
-			]
+			],
+			scope: ['email']
 		},
 		function(accessToken, refreshToken, profile, done) {
 			User.findOne({

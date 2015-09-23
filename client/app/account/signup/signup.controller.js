@@ -20,7 +20,7 @@ angular.module('workspaceApp')
           if(window.next) {
             var next = window.next;
             window.next = undefined;
-            $location.path(next);
+            location.href = (next);
           }else $location.path('/');
         })
         .catch( function(err) {
